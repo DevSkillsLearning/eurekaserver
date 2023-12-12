@@ -10,9 +10,9 @@ management:
       exposure:
         include: "*"
   health:
-    readinessstate:
+    readiness-state:
       enabled: true
-    livenessstate:
+    liveness-state:
       enabled: true
   endpoint:
     health:
@@ -23,9 +23,5 @@ management:
       application: ${spring.application.name}
 
 logging:
-  level:
-    com:
-      easybank:
-        loans: DEBUG
   pattern:
     level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"
